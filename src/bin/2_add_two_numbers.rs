@@ -1,36 +1,17 @@
+use leetcode_rust::helpers::linked_list::{to_list, ListNode};
+
 pub struct Solution;
-// `print_refs` takes two references to `i32` which have differentpub struct Solution;
-
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<ListNode>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        ListNode { next: None, val }
-    }
-}
-
-pub fn to_list(vec: Vec<i32>) -> List {
-    let mut current = None;
-    for &v in vec.iter().rev() {
-        let mut node = ListNode::new(v);
-        node.next = current;
-        current = Some(Box::new(node));
-    }
-    current
-}
 
 type List = Option<Box<ListNode>>;
 
-pub fn add_two_numbers(
-    l1: Option<Box<ListNode>>,
-    l2: Option<Box<ListNode>>,
-) -> Option<Box<ListNode>> {
+impl Solution {
+    pub fn add_two_numbers(
+        l1: Option<Box<ListNode>>,
+        l2: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
+        let node = Some(Box::new(ListNode::new(0)));
+        node
+    }
 }
 
 fn main() {
